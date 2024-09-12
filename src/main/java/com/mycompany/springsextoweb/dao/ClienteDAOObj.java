@@ -61,6 +61,27 @@ public class ClienteDAOObj implements ClienteDAO {
     return recCliente; 
     
   }
+
+  @Override
+  @Transactional
+  public void eliminarCliente(Long idCliente) {
+    //Obtener session
+    Session miSesion = sessionFactory.getCurrentSession();
+    
+    //borrar el Cliente
+    /*
+    en el Query se debe colocar la ruta completa y el nombre de la clase talcual:
+    en este caso "com.mycompany.springsextoweb.modelo.Cliente" y en where debe ir 
+    el nombre del campo en la clase, no el nombre de la columna en la tabla:
+    aqui "cliId" es el nombre del campo que mapea a la clumna que es "CLI_ID"
+    */
+    
+    Query qryBorra = miSesion.createQuery("delete from com.mycompany.springsextoweb.modelo.Cliente where cliId=:idDelCliente");
+    qryBorra.setParameter("idDelCliente", idCliente);
+    
+    qryBorra.executeUpdate();
+    
+  }
   
   
 }

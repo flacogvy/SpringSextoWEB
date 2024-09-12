@@ -17,10 +17,14 @@
         <th>Apellido</th>
         <th>Email</th>
         <th>Modificar</th>
+        <th>Eliminar</th>
       </tr>
       <c:forEach var="cliTemporal" items="${modCliente}">
         <c:url var="linkActual" value="formModifCliente" >
           <c:param name="clienteId" value="${cliTemporal.cliId}" />
+        </c:url>
+        <c:url var="linkBorra" value="formBorraCli">
+          <c:param name="clienteId" value="${cliTemporal.cliId}"/>
         </c:url>
         <tr>
           <td>${cliTemporal.cliNombre}</td>
@@ -28,6 +32,11 @@
           <td>${cliTemporal.cliEmail}</td>
           <td>
             <a href="${linkActual}" ><input type="button" value="Modificar" /></a>
+          </td>
+          <td>
+            <a href="${linkBorra}" ><input type="button" value="Eliminar" 
+               onclick="if (!(confirm ('Seguro de eliminar Registro ${cliTemporal.cliId}'))) return false;" />
+            </a>
           </td>
         </tr>
       </c:forEach>

@@ -10,5 +10,7 @@ public interface ClienteDAO {
   public void creaCliente(Cliente elClienPost);
 
   public Cliente traeCliente(Long idCliente);
+
+  public void eliminarCliente(Long idCliente);
   
 }

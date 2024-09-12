@@ -61,4 +61,16 @@ public class Controlador {
     return "formNewCliente";
   }
   
+  @GetMapping ("/formBorraCli")
+  public String borraCliente (@RequestParam ("clienteId") Long idCliente,
+          Model miModelo) {
+    //Eliminar el Cliente
+    clienteDAO.eliminarCliente (idCliente);
+    
+    //Redireccionar al la lista
+    
+    return "redirect:/cliente/lista";
+  }
+  
+  
 }
