@@ -1,0 +1,6 @@
+com\mycompany\springsextoweb\JakartaRestConfiguration.class
+com\mycompany\springsextoweb\dao\ClienteDAOObj.class
+com\mycompany\springsextoweb\resources\JakartaEE10Resource.class
+com\mycompany\springsextoweb\modelo\Cliente.class
+com\mycompany\springsextoweb\controlador\Controlador.class
+com\mycompany\springsextoweb\dao\ClienteDAO.class
